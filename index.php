@@ -1,12 +1,12 @@
 <?php
-require('core/BasecampAPI.php');
-require('config/settings.php');
 
-
-if($_GET['fc'] == 'mytdcount'){ include_once('core/count.php'); } 
-else if($_GET['fc'] == 'myopentd'){ include_once('core/opentodos.php'); }
+if(isset($_GET['mytdcount'])){ include('core/count.php'); } 
+else if(isset($_GET['mytdopen'])){ include('core/opentodos.php'); }
+else if(isset($_GET['tdproject'])){ include('core/opentodos.php'); }
 else {
-	echo 'Error choosing function';
+	//include_once('core/opentodos.php');
+	//include_once('core/count.php');
+	echo("No function selected");
 }
 
 

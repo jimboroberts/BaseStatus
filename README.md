@@ -53,6 +53,7 @@ Future Development
 
 - [ ] Order ToDo's by Date
 - [ ] Only show ToDo's with completion date (similar to 'me' on Basecamp)
+- [ ] Show all ToDo's
 
 Thanks
 ------

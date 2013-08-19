@@ -1,10 +1,14 @@
 <?php
 //header('Content-type: application/json');
-require_once('BasecampAPI.php');
 require_once('../config/settings.php');
+require_once('BasecampAPI.php');
 
 $bc = new Basecamp("$basecampAccountID", "$basecampUsername", "$basecampPassword", "$appName", "$appContact");
+
+//$projects = $bc->getProjectTodos($basecampMe, $basecampProject);
 $projects = $bc->getTodos($basecampMe);
+
+
 $output = '';
 
 //print_r($projects);

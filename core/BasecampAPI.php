@@ -2,13 +2,27 @@
 
   class basecamp
   {
+    /** @type string Base url for bcx-api requests. */
     protected $baseurl;
+    /** @type string Basecamp company/account ID. */
     protected $id;
+    /** @type string Basecamp login username. */
     protected $username;
+    /** @type string Basecamp login password. */
     protected $password;
+    /** @type string User-Agent to identify Application to Basecamp. */
     protected $useragent;
+    /** @type string String to store method errors. */
     public $error;
 
+    /**
+     * This method creates a new Basecamp instance.
+     *
+     * @param int $id An unsigned integer.
+     * @param string $username A string that represents the login username;
+     * @param string $password A string that represets the login password;
+     *
+     */
     public function __construct($id, $username, $password, $appName, $email)
     {
       $this->id = $id;
@@ -19,23 +33,36 @@
 
       $this->error = "";
     }
-		
-		public function getTodos($me)
-    {
-      $request = $this->baseurl . "people/".$me."/assigned_todos.json";
-      $result = $this->processRequest("GET", $request, array());
+    
+    /* public methods */
+		public function getTodos($me, $filter=null)
+		{
 
+			if($filter==null){
+			  $request = $this->baseurl . "people/".$me."/assigned_todos.json";
+			} else {
+			  $request = $this->baseurl . "people/".$me."/assigned_todos.json";
+			}
+			
+      $result = $this->processRequest("GET", $request, array());
       return $result; 
     }
     
+    public function getProjectTodos($me, $basecampProject)
+		{
+			$request = $this->baseurl . "projects/".$basecampProject."/todolists/".$me.".json";
+      $result = $this->processRequest("GET", $request, array());
+      return $result; 
+    }
     
     public function getTodoTotals($me)
     {
-      $request = $this->baseurl . "people/".$me."/assigned_todos.json";
+			$request = $this->baseurl . "people/".$me."/assigned_todos.json";    
       $result = $this->processRequest("GET", $request, array());
       return $result; 
     }
 		
+    /* private methods */
     private function processRequest($method, $request, $payload)
     {
       $ch = curl_init();
