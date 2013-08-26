@@ -1,18 +1,14 @@
 <?php
 header('Content-type: application/json');
-require_once('core/BasecampAPI.php');
-require_once('config/settings.php');
+require_once('BasecampAPI.php');
+require_once('../config/settings.php');
 
 $bc = new Basecamp("$basecampAccountID", "$basecampUsername", "$basecampPassword", "$appName", "$appContact");
-$todos = $bc->getTodoTotals($basecampMe);
+$todos = $bc->getAssignedToDos($basecampMe);
 $project = '';
 $todocount = 0;
 $i = 1;
 $totalrows = count($todos);
-
-function addtoarray($project,$todocount){
-	$data[] = array('title' => $project, 'datapoints' => array( array('title' => "Outstanding ToDo's", "value" => $todocount)));
-}
 
 
 foreach ($todos as $todo):

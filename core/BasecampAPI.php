@@ -55,11 +55,23 @@
       return $result; 
     }
     
-    public function getTodoTotals($me)
+    public function getAssignedToDos($person)
     {
-			$request = $this->baseurl . "people/".$me."/assigned_todos.json";    
+			$request = $this->baseurl . "people/".$person."/assigned_todos.json";
       $result = $this->processRequest("GET", $request, array());
       return $result; 
+    }
+    
+    public function getProjectAccess($basecampProject)
+    {
+			$request = $this->baseurl . "projects/".$basecampProject."/accesses.json";
+      $result = $this->processRequest("GET", $request, array());
+      return $result; 
+    }
+    
+    public function getPersonTDCount()
+    {
+	    
     }
 		
     /* private methods */

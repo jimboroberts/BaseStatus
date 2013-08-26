@@ -5,13 +5,8 @@ require_once('BasecampAPI.php');
 
 $bc = new Basecamp("$basecampAccountID", "$basecampUsername", "$basecampPassword", "$appName", "$appContact");
 
-//$projects = $bc->getProjectTodos($basecampMe, $basecampProject);
 $projects = $bc->getTodos($basecampMe);
-
-
 $output = '';
-
-//print_r($projects);
 
 foreach ($projects as $project):
 			
