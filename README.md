@@ -46,6 +46,8 @@ Within [Status Board](http://panic.com/statusboard/) add a new 'Do-It-Yourself' 
 
 * Your open ToDo's count - ```http://www.yourserver.com/BaseStatus/index.php?fc=mytdcount``` _Graph_
 * Your open ToDo's list - ```http://www.yourserver.com/BaseStatus/index.php?fc=myopentd```	_Do-It-Yourself_
+* Project Team assigned ToDo's count  - ```http://www.yourserver.com/BaseStatus/index.php?fc=alltdcount```	_Graph_
+* Project Team assigned ToDo's count  - ```http://www.yourserver.com/BaseStatus/index.php?fc=alltdcounttb```	_Table_
 
 
 Future Development
