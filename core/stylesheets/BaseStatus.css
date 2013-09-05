@@ -41,6 +41,7 @@
 		
 		.todo {
 			padding-bottom: 10px;
+			padding-left: 5px;
 		}
 		
 		h1 {
@@ -60,16 +61,16 @@
 			color: rgb(100,112,118);
 			text-transform: uppercase;
 		}
-		ul {
+		.todo ul {
 			list-style: none;
-			margin: 0px; 
+			margin: 0px 0px 0px 0px;
 		}
-		li {
+		.todo li {
 			padding-left: 1em; 
 			text-indent: -.7em;
-			margin: 20px;
+			margin: 5px 0px;
 		}
-		li:before {
+		.todo li:before {
     	content: "☐ ";
 	    color: rgb(252,107,0);
 		}
