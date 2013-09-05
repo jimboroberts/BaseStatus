@@ -30,11 +30,13 @@ foreach ($projects as $project):
   		 	 //$output .= '<li><a href="'.$todo->url.'">'.$todo->content.'</a>';
   		 	 $output .= '<li>'.$todo->content;
   		 	 $output .= '<span class="info">';
-  		 	 $output .= '<img class="avatar" height="20" width="20" src="'.$project->creator->avatar_url.'" alt="avatar">';
-  		 	 $output .= $todo->assignee->name;
-  		 	 if(!empty($todo->due_on)) {
-  		 	 	$output .=  ' - '.$todo->due_on;
-  		 	 }
+  		 	 //$output .= '<img class="avatar" height="20" width="20" src="'.$project->creator->avatar_url.'" alt="avatar">';
+  		 	 /*if(isset($_GET['mytdopen'])){
+  		 	 	$output .= $todo->assignee->name;
+			 	 	if(!empty($todo->due_on)) {
+  		 	 		$output .=  ' - '.$todo->due_on;
+			 	 	}
+			 	 }*/
   		 	 $output .= '</span>';
   		 	 $output .= '</li>';
   		 	endforeach;
