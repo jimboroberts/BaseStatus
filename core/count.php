@@ -1,7 +1,6 @@
 <?php
 header('Content-type: application/json');
-require_once('BasecampAPI.php');
-require_once('../config/settings.php');
+
 
 $bc = new Basecamp("$basecampAccountID", "$basecampUsername", "$basecampPassword", "$appName", "$appContact");
 $todos = $bc->getAssignedToDos($basecampMe);
